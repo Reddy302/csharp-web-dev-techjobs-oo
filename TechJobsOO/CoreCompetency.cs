@@ -1,30 +1,23 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class CoreCompetency
+    public class CoreCompetency : JobField
     {
-        private int Id { get; }
+        public int Id { get; }
         private static int nextId = 1;
-        public string Value { get; set; }
+        //public string Value { get; set; }
 
         // TODO: Change the fields to auto-implemented properties.
 
         public CoreCompetency()
         {
-            Id = nextId;
-            nextId++;
+            //Id = nextId;
+            //nextId++;
         }
 
-        public CoreCompetency(string value) : this()
+        public CoreCompetency(string value) : base(value)
         {
-            if (value == "")
-            {
-                Value = "Data not available";
-            }
-            else
-            {
-                Value = value;
-            }
+            
         }
 
         public override bool Equals(object obj)
@@ -40,7 +33,7 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            return Value;
+            return this.Value;
         }
     }
 }

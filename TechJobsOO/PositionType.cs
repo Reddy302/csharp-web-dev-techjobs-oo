@@ -1,28 +1,21 @@
 ﻿using System;
 namespace TechJobsOO
 {
-    public class PositionType
+    public class PositionType : JobField
     {
         public int Id { get; }
         private static int nextId = 1;
-        public string Value { get; set; }
+        //public string Value { get; set; }
 
         public PositionType()
         {
-            Id = nextId;
-            nextId++;
+            //Id = nextId;
+            //nextId++;
         }
 
-        public PositionType(string value) : this()
+        public PositionType(string value) : base(value)
         {
-            if (value == "")
-            {
-                Value = "Data not available";
-            }
-            else
-            {
-                Value = value;
-            }
+            
         }
 
         // TODO: Add custom Equals(), GetHashCode(), and ToString() methods.
@@ -40,7 +33,7 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            return Value;
+            return this.Value;
         }
 
     }

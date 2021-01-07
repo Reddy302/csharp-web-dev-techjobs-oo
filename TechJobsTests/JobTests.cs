@@ -19,17 +19,17 @@ namespace TechJobsTests
             emptyConstructorJob1 = new Job();
             emptyConstructorJob2 = new Job();
             // Add constructor arguments below
-            fullJob1 = new Job("Product tester", "ACME", "Desert", "Quality control", "Persistence");
-            fullJob2 = new Job("Product tester", "ACME", "Desert", "Quality control", "Persistence");
-            fullJob3 = new Job("Product tester", "ACME", "", "Quality control", "Persistence");
-            fullJob4 = new Job("Product tester", "ACME", "Desert", "Quality control", "");
+            fullJob1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            fullJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            fullJob3 = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            fullJob4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
         }
 
         [TestMethod]
         public void TestSettingJobId()
         {
-            Assert.IsTrue(emptyConstructorJob1.Id + 1 == emptyConstructorJob2.Id && emptyConstructorJob1.Id != emptyConstructorJob2.Id);
-            Assert.IsTrue(fullJob1.Id + 1 == fullJob2.Id && fullJob1.Id != fullJob2.Id);
+            Assert.IsTrue(emptyConstructorJob1.Id != emptyConstructorJob2.Id);
+            Assert.IsTrue(fullJob1.Id != fullJob2.Id);
         }
 
         [TestMethod]
