@@ -41,5 +41,16 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
+        public override string ToString()
+        {
+            if (this.Name == null && this.EmployerName == null && this.EmployerLocation == null && this.JobType == null && this.JobCoreCompetency == null)
+            {
+                return "OOPS! This job does not seem to exist.";
+            }
+            else
+            {
+                return $"\nID: {this.Id}\nName: {this.Name}\nEmployer: {this.EmployerName}\nLocation: {this.EmployerLocation}\nPosition Type: {this.JobType}\nCore Competency: {this.JobCoreCompetency}\n";
+            }
+        }
     }
 }

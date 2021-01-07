@@ -15,7 +15,14 @@ namespace TechJobsOO
 
         public Employer(string value) : this()
         {
-            Value = value;
+            if (value == "")
+            {
+                Value = "Data not available";
+            }
+            else
+            {
+                Value = value;
+            }
         }
 
         public override bool Equals(object obj)
