@@ -37,5 +37,10 @@ namespace TechJobsOO
         {
             return Value;
         }
+        public override bool Equals(object obj)
+        {
+            return obj is JobField jobField &&
+                   Id == jobField.Id;
+        }
     }
 }
